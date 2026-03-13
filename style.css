@@ -167,14 +167,6 @@ h1, h2, h3, h4, .logo, .footer-logo {
     mix-blend-mode: screen;
 }
 
-@media (max-width: 768px) {
-    #hero-canvas {
-        width: 85%; /* Less wider on mobile as requested */
-        height: auto;
-        object-fit: contain;
-    }
-}
-
 .hero-content {
     position: relative;
     z-index: 2;
@@ -432,58 +424,14 @@ h2 {
 }
 
 @media (max-width: 768px) {
-    .reviews-marquee-container {
-        height: 400px;
-        white-space: normal;
-        overflow: hidden;
-    }
-
-    .reviews-marquee {
-        flex-direction: column;
-        animation: scrollVertical 30s linear infinite;
-        transform: translateY(0);
-        display: flex;
-        align-items: center;
-        width: 100%;
-    }
-
     .review-item {
-        min-width: 90vw;
-        max-width: 90vw;
-        margin-right: 0;
-        margin-bottom: 3rem;
-        text-align: center;
-    }
-
-    .review-header {
-        justify-content: center;
-    }
-
-    .reviews-marquee-container::before {
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 80px;
-        background: linear-gradient(to bottom, var(--bg-color), transparent);
-    }
-
-    .reviews-marquee-container::after {
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 80px;
-        background: linear-gradient(to top, var(--bg-color), transparent);
-    }
-
-    @keyframes scrollVertical {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-50%); }
+        min-width: 260px;
+        max-width: 260px;
+        margin-right: 1.5rem;
     }
     
-    @keyframes scrollRight {
-        /* Keep original for desktop but override for mobile */
-        0% { transform: translateX(0); }
-        100% { transform: translateX(0); }
+    .review-item p {
+        font-size: 0.85rem;
     }
 }
 
