@@ -380,18 +380,21 @@ h2 {
 
 /* Stable Reviews Section */
 .reviews-container {
-    margin-top: 5rem;
+    margin-top: 8rem; /* Added more space between menu and reviews */
     width: 100%;
     display: flex;
     justify-content: center;
+    overflow-x: auto; /* Enable horizontal scrolling if items overflow */
+    padding: 2rem 0;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .reviews-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Keep items in one line */
     justify-content: center;
-    gap: 3rem;
-    max-width: 1200px;
+    gap: 2rem;
+    padding: 0 2rem;
 }
 
 .review-item {
@@ -399,8 +402,8 @@ h2 {
     border: 1px solid rgba(0, 255, 65, 0.1);
     padding: 2rem;
     border-radius: 12px;
-    min-width: 300px;
-    max-width: 350px;
+    min-width: 320px;
+    max-width: 320px;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -413,14 +416,19 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .reviews-container {
+        justify-content: flex-start; /* Start from left on mobile for scrolling */
+        margin-top: 5rem;
+    }
+    
     .reviews-grid {
+        justify-content: flex-start;
         gap: 1.5rem;
-        padding: 0 1rem;
     }
     
     .review-item {
-        min-width: 100%;
-        padding: 1.5rem;
+        min-width: 280px;
+        max-width: 280px;
     }
 }
 
