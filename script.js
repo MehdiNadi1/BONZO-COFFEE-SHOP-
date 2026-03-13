@@ -56,12 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                
-                // If it's a block, also trigger the mask inside it
-                const mask = entry.target.querySelector('.image-mask');
-                if (mask) {
-                    mask.classList.add('reveal');
-                }
             }
         });
     }, { threshold: 0.15 });
