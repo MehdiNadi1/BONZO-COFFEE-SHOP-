@@ -51,6 +51,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.slide-up').forEach(el => observer.observe(el));
 
+    // --- NEW EDITORIAL ANIMATIONS ---
+    const editorialObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                
+                // If it's a block, also trigger the mask inside it
+                const mask = entry.target.querySelector('.image-mask');
+                if (mask) {
+                    mask.classList.add('reveal');
+                }
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal-up, .editorial-block').forEach(el => 
+        editorialObserver.observe(el)
+    );
+
+    // Parallax Effect for Editorial Images
+    const parallaxImages = document.querySelectorAll('.parallax');
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        
+        parallaxImages.forEach(img => {
+            const speed = parseFloat(img.dataset.speed) || 0;
+            const parent = img.parentElement;
+            const parentOffset = parent.offsetTop;
+            const distance = scrolled - parentOffset;
+            
+            // Only calc if close to viewport for performance
+            if (Math.abs(distance) < window.innerHeight * 1.5) {
+                img.style.transform = `translateY(${distance * speed}px) scale(1.1)`;
+            }
+        });
+    });
+
     // 4. Hero Sequence Canvas Animation
     const canvas = document.getElementById('hero-canvas');
     if (canvas) {
