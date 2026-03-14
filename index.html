@@ -22,10 +22,6 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Leaflet Map CSS & JS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    
     <!-- Structured Data for Local Business SEO -->
     <script type="application/ld+json">
     {
@@ -222,43 +218,32 @@
 
         <!-- Visit & Contact Section -->
         <section id="visit" class="visit-section slide-up" aria-labelledby="visit-heading" tabindex="-1">
-            <div class="container">
-                <h2 id="visit-heading" class="section-title">VISIT <span class="accent">US</span></h2>
-                <div class="visit-grid">
-                    <!-- Map Container -->
-                    <div class="map-wrapper reveal-up">
-                        <div id="interactive-map"></div>
-                    </div>
-
-                    <!-- Contact & Newsletter -->
-                    <div class="visit-info">
-                        <div class="contact-details reveal-up">
-                            <address>
-                                <span class="brand-label">Location</span>
-                                <strong>BONZO Coffee Shop (BLOCK BURGER)</strong><br>
-                                5 Rue Basra, Av. Casablanca<br>
-                                Essaouira 44000, Morocco<br>
-                                <br>
-                                <span class="brand-label">Contact</span>
-                                <abbr title="Phone">P:</abbr> 06 75 40 10 41<br>
-                                <br>
-                                <span class="brand-label">Hours</span>
-                                Open Daily from 8:00 PM<br>
-                                <br>
-                                <a href="https://glovoapp.com" target="_blank" class="glow-link">Order on Glovo</a>
-                            </address>
-                        </div>
-
-                        <div class="newsletter-box reveal-up" style="transition-delay: 0.2s;">
-                            <h3 class="brand-label">Join the Network</h3>
-                            <p>Exclusive origin roasts & underground events.</p>
-                            <form class="newsletter-form" id="subscribe-form" novalidate>
-                                <input type="email" id="email-input" placeholder="EMAIL@NETWORK" required>
-                                <button type="submit" class="btn-accent">TRANSMIT</button>
-                            </form>
-                            <p id="form-msg" class="accent msg-hidden" aria-live="polite" style="display:none; margin-top: 1rem;"></p>
-                        </div>
-                    </div>
+            <div class="container layout-flex">
+                <div class="contact-info element-fade">
+                    <h2 id="visit-heading">VISIT <span class="accent">US</span></h2>
+                    <p>Step into our fully immersive environment or order online.</p>
+                    <address>
+                        <strong>BONZO Coffee Shop (BLOCK BURGER)</strong><br>
+                        5 Rue Basra, Av. Casablanca<br>
+                        Essaouira 44000, Morocco (G63R+XG)<br>
+                        <abbr title="Phone">P:</abbr> 06 75 40 10 41<br>
+                        <br>
+                        <strong>Hours of Operation:</strong><br>
+                        Open Daily starting at 8:00 PM<br>
+                        <br>
+                        <a href="https://glovoapp.com" target="_blank" class="accent" style="text-decoration: underline; font-weight: bold;">Order on Glovo</a>
+                    </address>
+                </div>
+                <div class="newsletter element-fade" style="transition-delay: 0.2s;">
+                    <h3>JOIN THE <span class="accent">NETWORK</span></h3>
+                    <p>Get updates on new origin roasts and exclusive underground events.</p>
+                    
+                    <!-- Form submission -->
+                    <form class="newsletter-form" id="subscribe-form" novalidate>
+                        <input type="email" id="email-input" placeholder="ENTER COMM-LINK (EMAIL)" required aria-label="Email address" autocomplete="email">
+                        <button type="submit" class="btn-accent" aria-label="Subscribe to newsletter">TRANSMIT</button>
+                    </form>
+                    <p id="form-msg" class="accent msg-hidden" aria-live="polite" style="display:none; margin-top: 1rem;"></p>
                 </div>
             </div>
         </section>
