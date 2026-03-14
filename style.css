@@ -456,6 +456,19 @@ h2 {
     .editorial-header {
         margin-bottom: 4rem;
     }
+
+    .editorial-mosaic {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-top: 4rem;
+    }
+
+    .mosaic-item.large,
+    .mosaic-item.small,
+    .mosaic-item.bottom {
+        grid-column: 1 / -1;
+        margin-top: 0;
+    }
 }
 .menu-grid {
     display: grid;
