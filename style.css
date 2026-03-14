@@ -459,21 +459,21 @@ h2 {
 }
 /* --- BONZO Branded Menu --- */
 .menu-section {
-    background: #fdfdfd; /* Clean light background for the menu section */
-    color: #000;
+    background: var(--bg-color); /* Reverted to dark theme */
+    color: var(--text-color);
     padding: 10rem 0;
     transition: background 0.5s ease;
 }
 
 .menu-section h2 {
-    color: #000000 !important; /* Force black for contrast on white */
+    color: var(--text-color);
     text-align: center;
     font-size: 4rem;
     margin-bottom: 2rem;
 }
 
 .menu-section h2 .accent {
-    color: #00cc33 !important; /* Slightly darker green for better readability on white */
+    color: var(--accent-color);
 }
 
 .menu-grid {
@@ -724,7 +724,7 @@ h2 {
 }
 
 .review-item {
-    background: #000;
+    background: #0d0d0d; /* Slightly lighter than main black for depth */
     border: 3px solid #1a1a1a;
     padding: 2.5rem;
     border-radius: 20px;
@@ -734,8 +734,8 @@ h2 {
     display: flex;
     flex-direction: column;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 10px 10px 0px rgba(0,255,65,0.2);
-    color: #ffffff; /* Ensure text is white */
+    box-shadow: 10px 10px 0px rgba(0,255,65,0.1);
+    color: #ffffff;
 }
 
 .review-item p {
