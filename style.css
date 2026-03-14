@@ -294,7 +294,8 @@ h2 {
     line-height: 0.9;
     letter-spacing: -2px;
     margin-bottom: 2rem;
-    color: var(--off-white);
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-glow);
 }
 
 .brand-label {
@@ -338,7 +339,8 @@ h2 {
     font-family: var(--font-body);
     font-size: 1.25rem;
     line-height: 1.8;
-    color: var(--concrete);
+    color: var(--accent-color);
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.2);
 }
 
 .block-image {
@@ -371,33 +373,6 @@ h2 {
 
 .phrase-1 { top: -20%; left: 0; transform: rotate(-5deg); }
 .phrase-2 { bottom: -10%; right: 0; transform: rotate(3deg); }
-
-/* Mosaic Collage Section */
-.editorial-mosaic {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 2rem;
-    margin-top: 10rem;
-}
-
-.mosaic-item {
-    position: relative;
-    overflow: hidden;
-}
-
-.mosaic-item.large { grid-column: 1 / 8; }
-.mosaic-item.small { grid-column: 8 / 13; align-self: end; }
-.mosaic-item.bottom { grid-column: 4 / 10; margin-top: -5rem; z-index: 5; }
-
-.stickers-accents {
-    position: absolute;
-    top: 10%;
-    right: 5%;
-    width: 150px;
-    z-index: 10;
-    opacity: 0.8;
-    pointer-events: none;
-}
 
 /* Scroll Animation Base */
 .reveal-up {
