@@ -458,46 +458,78 @@ h2 {
     }
 }
 /* --- BONZO Branded Menu --- */
+.menu-section {
+    background: #fdfdfd; /* Clean light background for the menu section */
+    color: #000;
+    padding: 10rem 0;
+    transition: background 0.5s ease;
+}
+
+.menu-section h2 {
+    color: #000;
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
     margin-top: 5rem;
+    align-items: stretch;
 }
 
 .menu-card {
     background: #ffffff;
-    padding: 3.5rem 2.5rem;
+    padding: 4rem 2.5rem;
     border-radius: 40px;
     border: 3px solid #000000;
     color: #000000;
     position: relative;
-    box-shadow: 12px 12px 0px rgba(0,0,0,1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 15px 15px 0px rgba(0,0,0,1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
     display: flex;
     flex-direction: column;
-    min-height: 800px;
+    min-height: 900px;
 }
 
+/* Subtle editorial tilt on desktop */
+.menu-card:nth-child(1) { transform: rotate(-1deg); }
+.menu-card:nth-child(2) { transform: rotate(1deg); }
+.menu-card:nth-child(3) { transform: rotate(-0.5deg); }
+
 .menu-card:hover {
-    transform: translate(-4px, -4px);
-    box-shadow: 18px 18px 0px rgba(0,0,0,1);
+    transform: translate(-5px, -5px) rotate(0deg) !important;
+    box-shadow: 22px 22px 0px rgba(0,0,0,1);
+}
+
+.menu-item-name {
+    font-weight: 800; /* Extra bold for identity */
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.menu-item-price {
+    font-weight: 900;
+    font-size: 1.05rem;
 }
 
 .menu-card.pink-accent { 
     border-color: #fec5bb; 
-    box-shadow: 12px 12px 0px #fec5bb; 
+    box-shadow: 15px 15px 0px #fec5bb; 
 }
 .menu-card.pink-accent:hover {
-    box-shadow: 18px 18px 0px #fec5bb;
+    box-shadow: 22px 22px 0px #fec5bb;
 }
 
 .menu-card.green-accent { 
     border-color: #a3b18a; 
-    box-shadow: 12px 12px 0px #a3b18a; 
+    box-shadow: 15px 15px 0px #a3b18a; 
 }
 .menu-card.green-accent:hover {
-    box-shadow: 18px 18px 0px #a3b18a;
+    box-shadow: 22px 22px 0px #a3b18a;
 }
 
 .menu-header-center {
@@ -534,11 +566,6 @@ h2 {
     align-items: baseline;
     margin-bottom: 0.75rem;
     font-family: var(--font-body);
-}
-
-.menu-item-name {
-    font-weight: 600;
-    font-size: 1rem;
 }
 
 .menu-item-leader {
@@ -679,21 +706,22 @@ h2 {
 }
 
 .review-item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(0, 255, 65, 0.1);
-    padding: 2rem;
-    border-radius: 12px;
-    min-width: 320px;
-    max-width: 320px;
+    background: #000;
+    border: 3px solid #000;
+    padding: 2.5rem;
+    border-radius: 20px;
+    min-width: 350px;
+    max-width: 350px;
     text-align: left;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 10px 10px 0px rgba(0,255,65,0.2);
 }
 
 .review-item:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-color);
+    transform: translate(-5px, -5px);
+    box-shadow: 15px 15px 0px var(--accent-glow);
 }
 
 @media (max-width: 768px) {
