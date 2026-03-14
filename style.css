@@ -466,10 +466,14 @@ h2 {
 }
 
 .menu-section h2 {
-    color: #000;
+    color: #000000 !important; /* Force black for contrast on white */
     text-align: center;
     font-size: 4rem;
     margin-bottom: 2rem;
+}
+
+.menu-section h2 .accent {
+    color: #00cc33 !important; /* Slightly darker green for better readability on white */
 }
 
 .menu-grid {
@@ -502,6 +506,15 @@ h2 {
 .menu-card:hover {
     transform: translate(-5px, -5px) rotate(0deg) !important;
     box-shadow: 22px 22px 0px rgba(0,0,0,1);
+}
+
+.menu-section .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-grid {
+    margin-bottom: 10rem; /* Space between menu and reviews */
 }
 
 .menu-item-name {
@@ -668,6 +681,11 @@ h2 {
     .menu-card {
         padding: 2.5rem 1.5rem;
         min-height: auto;
+        margin-bottom: 2rem;
+    }
+
+    .menu-grid {
+        margin-bottom: 6rem;
     }
 }
 
@@ -707,7 +725,7 @@ h2 {
 
 .review-item {
     background: #000;
-    border: 3px solid #000;
+    border: 3px solid #1a1a1a;
     padding: 2.5rem;
     border-radius: 20px;
     min-width: 350px;
@@ -717,6 +735,13 @@ h2 {
     flex-direction: column;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 10px 10px 0px rgba(0,255,65,0.2);
+    color: #ffffff; /* Ensure text is white */
+}
+
+.review-item p {
+    color: #ffffff !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .review-item:hover {
@@ -766,12 +791,12 @@ h2 {
 }
 
 .review-info span {
-    color: #888;
+    color: #aaaaaa;
     font-size: 0.75rem;
 }
 
 .review-item .review-stars {
-    color: var(--accent-color);
+    color: #00ff41; /* Keep neon green for stars */
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     letter-spacing: 2px;
