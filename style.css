@@ -367,19 +367,6 @@ h2 {
 }
 
 /* Layered Accents */
-.accent-phrase {
-    position: absolute;
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 5vw, 4rem);
-    color: rgba(255, 255, 255, 0.05);
-    white-space: nowrap;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.phrase-1 { top: -20%; left: 0; transform: rotate(-5deg); }
-.phrase-2 { bottom: -10%; right: 0; transform: rotate(3deg); }
-
 /* Mosaic Collage Section */
 .editorial-mosaic {
     display: grid;
