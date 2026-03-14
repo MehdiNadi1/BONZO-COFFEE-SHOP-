@@ -682,6 +682,110 @@ h2 {
     box-shadow: 0 0 15px var(--accent-glow);
 }
 
+/* Visit Section Redesign */
+.visit-section {
+    background: var(--bg-color);
+}
+
+.visit-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.map-wrapper {
+    height: 600px;
+    background: #1a1a1a;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+#interactive-map {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.visit-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4rem;
+}
+
+.contact-details address {
+    font-size: 1.1rem;
+    line-height: 2;
+    font-style: normal;
+    color: var(--concrete);
+}
+
+.contact-details strong {
+    color: var(--off-white);
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.glow-link {
+    display: inline-block;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--accent-color);
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.glow-link:hover {
+    background: var(--accent-color);
+    color: black;
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.newsletter-box {
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.newsletter-box p {
+    color: var(--concrete);
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    background: #111;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    color: white;
+    font-family: var(--font-body);
+}
+
+.newsletter-form input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+@media (max-width: 992px) {
+    .visit-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-wrapper {
+        height: 400px;
+    }
+}
+
 /* Footer */
 footer {
     background: var(--bg-color);
