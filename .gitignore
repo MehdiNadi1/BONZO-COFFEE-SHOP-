@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+.next/
+out/
+build/
+.DS_Store
+
+# Images and Sequences (optional, but keep them if small)
+# hero-sequence/
+
+# Environments
+.env*
+.local

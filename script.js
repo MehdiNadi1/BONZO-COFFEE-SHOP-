@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Use relative path for internal project structure
         const currentFrame = index => (
-            `hero-sequence/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
+            `assets/images/hero-sequence/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
         );
 
         const images = [];
@@ -171,7 +171,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Native Form Handling Showcase
+    // 5. Interactive Reviews Marquee (Mobile)
+    const revContainer = document.querySelector('.reviews-container');
+    const revGrid = document.querySelector('.reviews-grid');
+    
+    if (revContainer && revGrid) {
+        let isUserInteracting = false;
+        let scrollSpeed = 0.5; // Pixels per frame
+        let resumeTimer = null;
+
+        const autoScroll = () => {
+            if (!isUserInteracting && window.innerWidth <= 768) {
+                revContainer.scrollTop += scrollSpeed;
+                
+                // Infinite loop logic: content is duplicated, so reset at 50%
+                if (revContainer.scrollTop >= revGrid.scrollHeight / 2) {
+                    revContainer.scrollTop = 0;
+                }
+            }
+            requestAnimationFrame(autoScroll);
+        };
+
+        // Pause on interaction
+        const handleInteractionStart = () => {
+            isUserInteracting = true;
+            if (resumeTimer) clearTimeout(resumeTimer);
+        };
+
+        // Resume after delay
+        const handleInteractionEnd = () => {
+            if (resumeTimer) clearTimeout(resumeTimer);
+            resumeTimer = setTimeout(() => {
+                isUserInteracting = false;
+            }, 3000); // 3 second pause
+        };
+
+        revContainer.addEventListener('touchstart', handleInteractionStart, { passive: true });
+        revContainer.addEventListener('touchend', handleInteractionEnd, { passive: true });
+        revContainer.addEventListener('mousedown', handleInteractionStart);
+        revContainer.addEventListener('mouseup', handleInteractionEnd);
+        revContainer.addEventListener('wheel', () => {
+            handleInteractionStart();
+            handleInteractionEnd();
+        }, { passive: true });
+
+        // Start the loop
+        requestAnimationFrame(autoScroll);
+    }
+
+    // 6. Native Form Handling Showcase
     const form = document.getElementById('subscribe-form');
     const msg = document.getElementById('form-msg');
     if (form) {

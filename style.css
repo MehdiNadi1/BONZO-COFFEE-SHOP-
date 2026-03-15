@@ -992,28 +992,28 @@ footer p {
         font-size: 2.5rem;
     }
 
-    /* Slow Vertical Scroll Animation for Reviews */
+    /* Interactive Vertical Scroll for Reviews */
     .reviews-container {
-        height: 600px; /* Fixed height to space out the marquee */
-        overflow: hidden;
+        height: 600px; 
+        overflow-y: auto; /* Enable manual scroll */
         padding: 2rem 0;
         display: flex;
         justify-content: center;
         mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
         -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+        -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+    }
+
+    .reviews-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar Chrome/Safari */
     }
 
     .reviews-grid {
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        animation: scrollUp 25s linear infinite;
         width: 100%;
         gap: 2rem;
-    }
-
-    @keyframes scrollUp {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-50%); }
     }
 }
