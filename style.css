@@ -1007,7 +1007,7 @@ footer p {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        animation: scrollUp 40s linear infinite;
+        animation: scrollUp 25s linear infinite;
         width: 100%;
         gap: 2rem;
     }
