@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -96,8 +96,9 @@
         const images = [];
         
         const setCanvasSize = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            // Use DOM size instead of window size to respect CSS aspect ratio
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
             if (images[0] && images[0].complete) {
                 // Ensure correct scaling after resize
                 const frameIndex = getScrollFrameIndex();
@@ -130,15 +131,30 @@
 
         const drawImageCentered = (imgElement) => {
             if (!imgElement) return;
-            // Draw regardless of .complete if we know it just loaded or is ready
+            
             const hRatio = canvas.width / imgElement.width;
             const vRatio = canvas.height / imgElement.height;
-            const ratio  = Math.max(hRatio, vRatio);
+            
+            // Choose between 'cover' and 'contain' logic
+            let ratio;
+            if (window.innerWidth <= 768) {
+                // Mobile: Use 'contain' logic and reduce scale slightly so nothing is cropped
+                ratio = Math.min(hRatio, vRatio) * 0.85; 
+            } else {
+                // Desktop: Keep the 'cover' logic for full-screen impact
+                ratio = Math.max(hRatio, vRatio);
+            }
+            
             const centerShift_x = (canvas.width - imgElement.width * ratio) / 2;
             const centerShift_y = (canvas.height - imgElement.height * ratio) / 2;  
+            
             context.clearRect(0, 0, canvas.width, canvas.height);
-            context.drawImage(imgElement, 0, 0, imgElement.width, imgElement.height,
-                                centerShift_x, centerShift_y, imgElement.width * ratio, imgElement.height * ratio);
+            context.drawImage(
+                imgElement, 
+                0, 0, imgElement.width, imgElement.height,
+                centerShift_x, centerShift_y, 
+                imgElement.width * ratio, imgElement.height * ratio
+            );
         };
 
         const heroSection = document.querySelector('.hero-scroll-container');
