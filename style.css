@@ -164,7 +164,6 @@ h1, h2, h3, h4, .logo, .footer-logo {
     width: 100%;
     overflow: hidden;
     display: flex;
-    flex-direction: column; /* Stack vertically on mobile if needed */
     justify-content: center;
     align-items: center;
 }
@@ -182,34 +181,7 @@ h1, h2, h3, h4, .logo, .footer-logo {
     mix-blend-mode: screen;
 }
 
-@media (max-width: 768px) {
-    .sticky-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 40px 20px;
-        min-height: 100vh;
-    }
 
-    #hero-canvas {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-        width: 100%;
-        max-width: 430px; /* Limit width on larger mobiles */
-        height: auto;
-        aspect-ratio: 4 / 5;
-        object-fit: contain;
-        margin: 0 auto 2rem;
-        display: block;
-    }
-    
-    .hero-content {
-        order: -1; /* Place text above the animation on mobile */
-        margin-bottom: 1rem;
-    }
-}
 
 .hero-content {
     position: relative;
@@ -1017,18 +989,6 @@ footer p {
     }
     
     .hero-content h1 {
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-        line-height: 1.5;
-        max-width: 280px;
-        margin: 0 auto;
-    }
-
-    .scroll-indicator {
-        bottom: 20px;
+        font-size: 2.5rem;
     }
 }
