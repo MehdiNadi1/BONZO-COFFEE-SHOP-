@@ -992,20 +992,28 @@ footer p {
         font-size: 2.5rem;
     }
 
-    /* Slow Scroll Animation for Reviews */
+    /* Slow Vertical Scroll Animation for Reviews */
     .reviews-container {
+        height: 600px; /* Fixed height to space out the marquee */
         overflow: hidden;
-        padding: 4rem 0;
+        padding: 2rem 0;
+        display: flex;
+        justify-content: center;
+        mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
     }
 
     .reviews-grid {
-        justify-content: flex-start;
-        animation: scrollRight 40s linear infinite;
-        width: max-content;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: scrollUp 40s linear infinite;
+        width: 100%;
+        gap: 2rem;
     }
 
-    @keyframes scrollRight {
-        0% { transform: translateX(-50%); }
-        100% { transform: translateX(0); }
+    @keyframes scrollUp {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
     }
 }
