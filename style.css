@@ -991,4 +991,21 @@ footer p {
     .hero-content h1 {
         font-size: 2.5rem;
     }
+
+    /* Slow Scroll Animation for Reviews */
+    .reviews-container {
+        overflow: hidden;
+        padding: 4rem 0;
+    }
+
+    .reviews-grid {
+        justify-content: flex-start;
+        animation: scrollRight 40s linear infinite;
+        width: max-content;
+    }
+
+    @keyframes scrollRight {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+    }
 }
